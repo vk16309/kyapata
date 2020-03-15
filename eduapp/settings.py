@@ -28,7 +28,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'w6TKi4NlvLrFKZGWwsV0aoJB'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','https://127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -141,4 +141,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = '/auth/login/google-oauth2/','/auth/login/facebook/'
 LOGIN_REDIRECT_URL = '/student/dashboard'
 LOGOUT_REDIRECT_URL = '/student/dashboard'
-
