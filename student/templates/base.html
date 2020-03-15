@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../static/css/base.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Mansalva|Lora|Pacifico|Tangerine|Helvetica|Arial|sans-serif">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>kyapata</title>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<!-- header-->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+    <a class="navbar-brand" href="index.html">
+      <img src="..." width="30" height="30" class="d-inline-block align-top" alt="">KyaPata
+    </a>
+
+    <div class="margin-toggle ml-auto order-0">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <br>
+           <li class="nav-item active">
+              <p class="text-white"><i>Hello! </i>{{ user.first_name}} {{ user.last_name}} </p>
+          </li>
+            <li class="nav-item active">
+                 <a class="logout_link" href="{% url 'logout' %}">..Logout</a>
+            </li>
+
+                {% else %}
+            <li class="nav-item active">
+             <a class="logout_link" href="{% url 'social:begin' 'google-oauth2' %}"> Login using google</a>
+            </li>
+              {% endif %}
+        </ul>
+    </div>
+</nav>
+
+<!--header-->
+<div >
+{% block content %}
+
+{% endblock %}
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small">
+
+  <div style="background-color: #6351ce;">
+    <div class="container text-white">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic" href="">
+            <i class="fa fa-facebook text-white mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic" href="">
+            <i class="fa fa-twitter text-white mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic" href="">
+            <i class="fa fa-google-plus text-white mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic" href="">
+            <i class="fa fa-linkedin text-white  mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic" href="">
+            <i class="fa fa-instagram text-white"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-white text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">KyaPata</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>KyaPata is a portal to connect teachers and students in a city.</p>
+
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="" class="text-white">About Us</a>
+        </p>
+        <p>
+          <a href="" class="text-white">Our team</a>
+        </p>
+        <p>
+          <a href="" class="text-white">Suggestions</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fa fa-home mr-3"></i> Ashok Rajpath, Patna</p>
+        <a href="mailto:kyapata@gmail.com"><p class="text-white">
+          <i class="fa fa-envelope mr-3 text-white"></i> Kyapata@gmail.com</p></a>
+        <p>
+          <i class="fa fa-phone mr-3"></i> 9798889311</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="index.html"> KyaPata.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<!-- support -->
+<span class="mdc-fab__icon app-fab--absolute material-icons text-white" ><a href="{% url 'support_form' %}" data-toggle="tooltip" data-placement="top" title="Help and Support">help</a></span>
+<!-- support -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+ <div class="row">
+        {% for obj in filter.qs %}
+            <div class="col bottomspace text-center">
+            <div class="card cardteacher shadow" style="width: 100%;">
+              <img class="card-img-top" src="{{ obj.image.url }}" alt="Card image cap">
+
+              <div class="card-body">
+                   <p class="card-text "><div class="type font-weight-bold typetext text-center">{{ obj.coaching_type }}</div></p>
+                <p class="card-text font-weight-bold">{{ obj.name }}</p>
+                <!--  <p class="card-text">Mobile Number: {{ obj.contact }} </p>
+                  <p class="card-text">Email: {{ obj.email }}</p>
+                  <p class="card-text">Experience: {{ obj.experience }} years</p>
+                  <p class="card-text">City: {{ obj.city }}</p>
+                  <p class="card-text">State: {{ obj.state }}</p>  -->
+                  <p class="card-text"><a href="..."><i class="fa fa-thumbs-up"></i></a> {{ obj.votes_total }}</p>
+              </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>

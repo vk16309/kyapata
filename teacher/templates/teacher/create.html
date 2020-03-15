@@ -1,0 +1,39 @@
+{% extends 'base1.html' %}
+{% block content %}
+
+<h1>Listing</h1>
+{% if error %}
+<p>{{error}}</p>
+
+{% endif %}
+<form class="" action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <fieldset>
+     <legend>Create Your Listing</legend>
+     <p>
+        <label>Class</label>
+        <select name="class_name">
+          <option value = "1">1</option>
+          <option value = "2">2</option>
+          <option value = "3">3</option>
+          <option value = "4">4</option>
+          <option value = "5">5</option>
+          <option value = "6">6</option>
+          <option value = "7">7</option>
+          <option value = "8">8</option>
+          <option value = "9">9</option>
+          <option value = "10">10</option>
+          <option value = "11">11</option>
+          <option value = "12">12</option>
+          <option value = "13">Other</option>
+        </select>
+     </p>
+     Choose Your Class Type:<br>
+     <input type="radio" name="class_type" value="coaching">Coaching<br>
+     <input type="radio" name="class_type" value="tution">Home Tution<br>
+     <input type="radio" name="class_type" value="both">both<br>
+     Subject: <input type="text" name="subject" value="">
+     <input type="submit" name="" value="Create" class="btn btn-primary">
+  </fieldset>
+  </form>
+{% endblock %}

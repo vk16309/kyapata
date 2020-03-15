@@ -1,0 +1,19 @@
+/* .dp{
+  position: relative;
+  float:right;
+} */
+.dp{
+  position: relative;
+  float:right;
+  margin-right: 2%;
+  width:25%;
+}
+.card{
+  width:46%;
+  height:100%;
+  margin-left:25%;
+  float:left;
+}
+/* .bg-dark{
+  padding-left: 5px;
+} */

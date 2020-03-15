@@ -1,0 +1,58 @@
+{% extends 'teacher/base1.html' %}
+{% block content %}
+
+<div class="row">
+  <div class="col-3">
+    <h3><b>Quick Links</b></h3><br>
+    <a href="{% url 'editform' teacher.id %}">Edit Profile</a><br>
+    <a href="{% url 'create' %}">Create</a><br>
+    <a href="#">Support</a><br>
+    <a href="#">About Us</a><br>
+  </div>
+  <div class="col-6">
+    <h3 class="text-center">Personal information</h3>
+    <p>Institue Name :- {{teacher.institute_name}}</p>
+    <p>Email Id :- {{teacher.email}}</p>
+    <p>Contact :- +91 {{teacher.contact}}</p>
+    <p>City : {{teacher.city}}</p>
+    <p>State : {{teacher.state}}</p>
+    <p>Your Acheivements : {{teacher.acheivements}}</p>
+  </div>
+  <div class="col-3">
+    <img src="{{ teacher.image.url }}" height="200" width="200" class="img-fluid" alt="">
+    <p>Name : <b>{{teacher.name}}</b></p>
+    <a href="javascript:{document.getElementById('upvote{{teacher.id}}').submit()}"><button type="button" class="btn btn-primary btn-lg btn-block" name="button"> Upvote : {{ teacher.votes_total }}</button></a>
+  </div>
+
+</div>
+<br>
+<hr size='20'>
+    <h3 class="text-center">Academic Information</h3>
+<br>
+{% for create in creation.all %}
+{% if teacher.teacher == create.creater %}
+<div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-6">
+
+<div class="jumbotron">
+
+
+    <p><b>Standard : </b>{{create.class_name}}</p>
+    <p><b>Mode : </b>{{create.class_type}}</p>
+    <p><b>Subject : </b>{{create.subject}}</p>
+    </div>
+  </div>
+  <div class="col-3">
+
+  </div>
+  </div>
+
+{% endif %}
+{% endfor %}
+<form id="upvote{{teacher.id}}" action="{% url 'upvote' teacher.id %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" >
+</form>
+{% endblock %}

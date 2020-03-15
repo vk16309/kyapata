@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%  block content %}
+
+
+
+ {% if messages %}
+                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {% for message in messages %}
+                            <p> {{ message }}</p>
+                        {% endfor %}
+
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                    {% if authenticated %}
+                 <a href="{% url 'find' %}"> <button type="button" class="find-button btn-lg">
+                             Find a teacher
+                         </button></a>
+                     {% endif %}
+ {% else %}
+  <div class="container box" id="box">
+
+           <div class="container">
+            <div class="col-sm-6">
+                <div class="card rounded-lg shadow mb-4 bg-white">
+                    <div class="card-header"><b>Support</b></div>
+                    <div class="card-body">
+                            <form method="post">
+                                    {% csrf_token %}
+                              {% for field in form %}
+                                  <div class="form-group{% if field.errors %} invalid{% endif %}">
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                    {{ field }}
+                                  </div>
+                                {% endfor %}
+
+        <input type="submit" value="Send" class="btn btn-primary"/>
+        <!--<input type="hidden" name="next" value="{{ next }}" />-->
+    </form>
+</div>
+</div>
+</div>
+</div>
+  </div>
+
+{% endif %}
+
+{% endblock %}

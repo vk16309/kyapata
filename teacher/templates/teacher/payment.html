@@ -1,0 +1,15 @@
+{% extends 'teacher/base1.html' %}
+{% block content %}
+
+<h1>Enter Your Trasaction Details</h1>
+{% if error %}
+<p>{{error}}</p>
+
+{% endif %}
+<form class="" action="{% url 'payment' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>Transaction ID:</p>
+  <input type="text" name="transaction_id" value="">
+  <input type="submit" name="" value="Verify" class="btn btn-primary">
+  </form>
+{% endblock %}

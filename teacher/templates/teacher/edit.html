@@ -1,0 +1,35 @@
+{% extends 'teacher/base1.html' %}
+{% block content %}
+
+<h1>Edit Your Personal Details</h1>
+{% if error %}
+<p>{{error}}</p>
+
+{% endif %}
+<form class="" action="{% url 'editform' k %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>Name:</p>
+  <input type="text" name="name" value="">
+  <p>Institute Name:</p>
+  <input type="text" name="institute_name" value="">
+  <p>E-mail:</p>
+  <input type="email" name="email" value="">
+  <p>Contact:</p>
+  <input type="text" name="contact" value="">
+  <p>City:</p>
+  <input type="text" name="city" value="">
+  <p>State:</p>
+  <input type="text" name="state" value="">
+  <p>Acheivements:</p>
+  <input type="textbox" name="acheivements" value="">
+  <p>Experience:</p>
+  <input type="text" name="experience" value="">
+  <p>Image:</p>
+  <input type="file" name="image" value="">
+  <p>Video Links:</p>
+  <input type="text" name="videolinks" value="">
+  <br>
+  <br>
+  <input type="submit" name="" value="SUBMIT" class="btn btn-primary">
+  </form>
+{% endblock %}
