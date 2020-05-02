@@ -28,7 +28,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'w6TKi4NlvLrFKZGWwsV0aoJB'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','https://127.0.0.1','95a6f5b4.ngrok.io']
+ALLOWED_HOSTS = []
 
 
 # Application definition
