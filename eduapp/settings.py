@@ -28,7 +28,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'w6TKi4NlvLrFKZGWwsV0aoJB'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['singhdev.pythonanywhere.com']
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 
 
 # Application definition
