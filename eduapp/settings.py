@@ -22,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '(1$-(nm-)yrx1t5(o-vx1(c&v!7cgv@k1$j8v#=p+!%lb1w816',
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '923332407-tlo4el2a9jjhdh223k15rsktgh6rb3qm.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'w6TKi4NlvLrFKZGWwsV0aoJB'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '923332407-e0v6bnmn9uqqqakibijofmklastaj7kj.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'GJbqU7RXKD2f7b8QTIflcw9X'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -138,6 +138,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-LOGIN_URL = 'https://127.0.0.1/auth/login/google-oauth2/','/auth/login/facebook/'
+LOGIN_URL = 'http://singhdev.pythonanywhere.com/auth/login/google-oauth2/','/auth/login/facebook/'
 LOGIN_REDIRECT_URL = '/student/dashboard'
 LOGOUT_REDIRECT_URL = '/student/dashboard'
