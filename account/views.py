@@ -32,15 +32,16 @@ def login(request):
         else:
             return render(request,'account/login.html',{})
 
-    if request.method=='POST':
-        user = auth.authenticate(username=request.POST['username'],password=request.POST['password'])
-        if user is not None:
-            auth.login(request, user)
-            return redirect('personal')
+    except:
+        if request.method=='POST':
+            user = auth.authenticate(username=request.POST['username'],password=request.POST['password'])
+            if user is not None:
+                auth.login(request, user)
+                return redirect('personal')
+            else:
+                return render(request,'account/login.html',{'error':'Username or password is incorrect!'})
         else:
-            return render(request,'account/login.html',{'error':'Username or password is incorrect!'})
-    else:
-        return render(request,'account/login.html',{})
+            return render(request,'account/login.html',{})
 
 def logout(request):
     if request.method == 'POST':
